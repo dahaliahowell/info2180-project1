@@ -1,3 +1,7 @@
+:root {
+
+}
+
 body {
     margin: 0;
     font-size: 16px;
@@ -8,3 +12,86 @@ body {
     max-width: 960px;
     width: 100%;
 }
+
+.headerdiv ul {
+	min-width: 696px;
+	list-style: none;
+	padding: 50px;
+}
+
+.headerdiv li {
+    display: inline;
+}
+
+.headerdiv {
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    
+}
+
+.flexbox-item {
+    flex-grow: 1;
+    background-color: palegoldenrod;
+}
+
+.overview-hero {
+    background-color: #e2e8f0;
+}
+
+.testing {
+    background-color: #4a5568;
+}
+
+.newsletter {
+    background-color: #48bb78;
+}
+
+footer {
+    background-color: #4a5568;
+}
+
+.overview-hero img {
+    height: 150px;
+    width: 150px;
+}
+
+.learn-about img {
+    height: 200px;
+    width: 200px;
+}
+
+.stories img {
+    border-radius: 100%;
+    height: 150px;
+    width: 150px;
+}
+
+.card {
+    padding: 10px;
+    height: 370px;
+    width: 240px; 
+    border-style: solid;
+    border-color: #e2e8f0;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "header header header"
+      "card1 card2 card3"
+}
+
+/*.navheader {
+    flex-grow: 1;
+    color: palegoldenrod;
+}
+
+.navlist {
+    flex-grow: 1;
+    background-color: blue;
+}*/
