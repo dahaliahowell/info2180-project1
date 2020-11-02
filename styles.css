@@ -1,10 +1,21 @@
 :root {
-
+    --defaultFontFamily: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    --defaultFontSize: 18px;
+    --aboutHeaderSize: 24px;
+    --cardHeaderSize: 21px;
+    --corners: 5px;
+    --headerColour: #48bb78;
+    --white: white;
+    --paleBlue: #6b7280;
+    --blue: #5a67d8;
+    --lightBlue: #e2e8f0;
+    --navyBlue: #4a5568;
 }
 
 body {
+    font-family: var(--defaultFontFamily);
     margin: 0;
-    font-size: 16px;
+    font-size: var(--defaultFontSize);
 }
 
 .container {
@@ -13,47 +24,54 @@ body {
     width: 100%;
 }
 
-.headerdiv ul {
+header ul {
 	min-width: 696px;
-	list-style: none;
-	padding: 50px;
+	list-style-type: none;
+    display: flex;
+    margin-left: 400px;
+    margin-top: 30px
 }
 
-.headerdiv li {
+header li {
     display: inline;
 }
 
-.headerdiv {
+header div {
     display: flex;
     flex-direction: row;
-    width:100%;
-    
+    margin-left: 150px;
 }
 
-.flexbox-item {
-    flex-grow: 1;
-    background-color: palegoldenrod;
+header h1 {
+    font-size: var(--defaultFontSize);
 }
 
 .overview-hero {
-    background-color: #e2e8f0;
+    margin: auto;
+    background-color: var(--lightBlue);
 }
 
 .testing {
     background-color: #4a5568;
-    padding: 70px 0;
+    color: var(--white);
+    padding: 100px 0;
     display: flex;
     flex-direction: row;
-    width: 100%
+    row-gap: 20px;
+    
 }
 
 .newsletter {
-    background-color: #48bb78;
+    background-color: var(--headerColour);
     padding: 50px 0;
+    color: var(--white);
+    text-align: center;
 }
 
 footer {
-    background-color: #4a5568;
+    background-color: var(--navyBlue);
+    color: var(--white);
+    display: grid;
 }
 
 .overview-hero img {
@@ -62,12 +80,27 @@ footer {
 }
 
 .overview-hero .container {
-    padding: 40px 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding-left: 70px;
+    padding-right: 70px;
 }
 
 .learn-about img {
     height: 200px;
     width: 200px;
+}
+
+.learn-about h2 {
+    font-size: var(--aboutHeaderSize);
+    color: #48bb78;
+}
+
+.learn-about h3 {
+    font-size: var(--cardHeaderSize);
+    color: #48bb78;
 }
 
 .stories img {
@@ -81,31 +114,50 @@ footer {
     padding: 70px 0;
 }
 
+.stories h2 {
+    color: var(--blue);
+}
+
+.stories a {
+    color: var(--blue);
+}
+
+.stories h3 {
+    font-size: var(--defaultFontSize);
+}
+
 .card {
     padding: 10px;
-    height: 370px;
-    width: 240px; 
+    height: 430px;
+    width: 235px; 
     border-style: solid;
     border-color: #e2e8f0;
-    border-radius: 5px;
+    border-radius: s5px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-/*
-.about-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 0px;
-}*/
+.learn-about .container {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    justify-content: center;
+}
+
+.cta a {
+    color: var(--white);
+    text-transform: uppercase;
+}
 
 .cta {
     background-color: #48bb78;
-    padding: 12px 20px;
-    border-radius: 4px;
-    margin: 8px 0;
-    width: 78px;
+    padding: 12px 12px;
+    border-radius: var(--corners);
+    margin: auto auto;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 #email {
@@ -123,7 +175,7 @@ button {
     padding: 12px 20px;
     margin: 8px 0;
     border: none;
-    border-radius: 4px;
+    border-radius: var(--corners);
     cursor: pointer;
 }
 
@@ -131,28 +183,45 @@ form {
     display: flex;
     flex-flow: row wrap;
     gap: 5px;
+    justify-content: center;
+    align-items: center;
 }
 
 article {
     display: flex;
     flex-direction: row;
     gap: 25px;
+    justify-content: center;
+    align-items: center;
 }
 
-/*
-.abth2 { 
-    color: blue;
-    grid-area: 1 / 1 / 2 / 4; 
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
 }
-.card1 {
-    color: yellow;
-    grid-area: 2 / 1 / 3 / 2; 
+
+footer .container {
+    height: 100%;
+    width: 100%;
+    background-color: #4a5568;
+
 }
-.card2 { 
-    color: teal;
-    grid-area: 2 / 2 / 3 / 3; 
+
+.testing .container {
+    display: flex;
+    flex-direction: row;
 }
-.card3 { 
-    color: navy;
-    grid-area: 2 / 3 / 3 / 4; 
-}*/
+
+header a {
+    color: var(--paleBlue);
+    margin-left: 15px
+}
+
+header a:hover {
+    color: var(--blue);
+}
+
+a {
+    text-decoration: none;
+}

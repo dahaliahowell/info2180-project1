@@ -1,35 +1,21 @@
-window.onload = function(){
+ window.onload = function(){
+    const submitbtn = document.querySelector("button");
 
-    headerDiv = document.querySelectorAll('header > div');
-    abtDiv = document.querySelectorAll('.learn-about > .container');
-    cards = document.querySelectorAll('.learn-about > .card');
-    abth2 = document.querySelectorAll('.learn-about > h2');
+    function generateMessage() {
 
-    headerDiv.forEach(element => {
-        element.classList.add('headerdiv');
-    });
+        submitbtn.addEventListener("click", function(e){
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            console.log("button clicked!");
+    
+            if (document.getElementById("email").value === "") {
+                document.getElementsByClassName("message")[0].innerHTML = 'Please enter a valid email address.';
+            } else {
+                var email = document.getElementById("email").value;
+                document.getElementsByClassName("message")[0].innerHTML = `Thank you! Your email address ${email} has been added to our mailing list!`;
+            }
+        });
+    }
 
-    abth2.forEach(element => {
-        element.classList.add('header');
-    });
-
-
-    abtDiv.forEach(element => {
-        element.classList.add('about-grid')
-    });
-
-    cards.forEach(function(element, index, list) {
-        element.classList.add('card' + index)
-    });
-
-    navHeader = document.querySelectorAll('.headerdiv > h1');
-    navList = document.querySelectorAll('.headerdiv > ul');
-
-    navHeader.forEach(element => {
-        element.classList.add('flexbox-item navheader');
-    });
-
-    navList.forEach(element => {
-        element.classList.add('flexbox-item navlist');
-    });
+    generateMessage();
 }
